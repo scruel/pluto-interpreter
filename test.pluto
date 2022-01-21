@@ -1,0 +1,40 @@
+main:
+	LDI R0, 0
+	PUSH R0;
+	RCALL prepare
+	LDI R0, 0
+	LDS R1, R0
+	INC R1
+	LDI R0, 0
+	INC R0
+loop:
+	LDS R2, R0
+	PTC R2
+	INC R0
+	AND R0, R1
+	BREQ loop
+	EXT 0
+
+prepare:
+	LDI R0, 6
+	POP R1
+	STS R1, R0
+	LDI R0, 83
+	INC R1
+	STS R1, R0
+	LDI R0, 99
+	INC R1
+	STS R1, R0
+	LDI R0, 114
+	INC R1
+	STS R1, R0
+	LDI R0, 117
+	INC R1
+	STS R1, R0
+	LDI R0, 101
+	INC R1
+	STS R1, R0
+	LDI R0, 108
+	INC R1
+	STS R1, R0
+	RET
